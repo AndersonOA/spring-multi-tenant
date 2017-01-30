@@ -47,6 +47,10 @@
 
 	<mvc:resources mapping="/**" location="/_app/" />
 
+	<mvc:interceptors>
+		<bean class="br.com.makersweb.multitenancy.handler.TenancyInterceptor"></bean>
+	</mvc:interceptors>
+
 	<import resource="multi-tenancy-spring-datasource.xml" />
 	<import resource="classpath:multi-tenancy-services-context.xml" />
 

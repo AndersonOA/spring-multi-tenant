@@ -10,7 +10,7 @@
 			
 		<title><decorator:title /></title>
 		<meta name="robots" content="index, follow"/>
-		<meta name="multi-tenancy_version" content="<spring:message code="multi-tenancy.api.version" />" />
+		<meta name="multi-tenancy_version" content="<spring:message code="multi.tenancy.api.version" />" />
 		
 		<link rel="shortcut icon" href="../_cdn/_img/favicon.png"/>
 		<link href='https://fonts.googleapis.com/css?family=Open Sans:300,400,600,700,800' rel='stylesheet' type='text/css'>

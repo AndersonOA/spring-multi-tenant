@@ -11,11 +11,19 @@
 		<aop:aspect id="myRepositoryAspect" ref="aspectDao">
 			<aop:pointcut id="repositoryAspectPointCut"
 				expression="execution(* br.com.makersweb.multitenancy.repository.*.save(..))" />
-			<aop:around pointcut-ref="repositoryAspectPointCut" method="doBasicDomainInformation" />			
+			<aop:around pointcut-ref="repositoryAspectPointCut"
+				method="doBasicDomainInformation" />
+		</aop:aspect>
+
+		<aop:aspect id="myTenancyRepositoryAspect" ref="tenancyDao">
+			<aop:pointcut id="repositoryAspectBefore"
+				expression="execution(* br.com.makersweb.multitenancy.repository.*.*(..))" />
+			<aop:before method="definirTenant" pointcut-ref="repositoryAspectBefore" />
 		</aop:aspect>
 	</aop:config>
 
-  	<!-- Definition for dao aspect -->
-   <bean id="aspectDao" class="br.com.makersweb.multitenancy.aspect.AspectDao"/> 
+	<!-- Definition for dao aspect -->
+	<bean id="aspectDao" class="br.com.makersweb.multitenancy.aspect.AspectDao" />
+	<bean id="tenancyDao" class="br.com.makersweb.multitenancy.aspect.TenancyAspect" />
 
 </beans>
