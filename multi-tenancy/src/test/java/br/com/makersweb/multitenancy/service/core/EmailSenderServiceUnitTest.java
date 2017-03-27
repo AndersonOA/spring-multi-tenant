@@ -7,6 +7,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import org.junit.Assert;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,6 +32,7 @@ public class EmailSenderServiceUnitTest {
 	@Autowired
 	private IEmailSenderService emailSenderService;
 
+	@Ignore
 	@Test
 	public void sentRegisterEmailTest() throws BusinessException {
 		Map<String, Object> data = new HashMap<String, Object>();
