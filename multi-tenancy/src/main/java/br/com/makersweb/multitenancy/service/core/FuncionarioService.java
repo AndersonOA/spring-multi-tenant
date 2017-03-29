@@ -85,15 +85,20 @@ public class FuncionarioService implements IFuncionarioService {
 	@Override
 	@Transactional(rollbackFor = { Exception.class })
 	public Funcionario alterar(Funcionario funcionario) throws BusinessException {
-		// TODO Auto-generated method stub
-		return null;
+		verificaExistencia(funcionario);
+		
+		return funcionarioRepository.save(funcionario);
 	}
 
 	@Override
 	@Transactional(rollbackFor = { Exception.class })
-	public void deletar(Long id) throws EmptyResultDataAccessException {
-		// TODO Auto-generated method stub
-
+	public void deletar(Long id) throws BusinessException {
+		try {
+			funcionarioRepository.delete(id);
+		} catch (EmptyResultDataAccessException e) {
+			throw new BusinessException(new MakersMessage(messageSource)
+					.message("br.com.makersweb.multitenancy.text.nao.encontrado", "Funcionário"));
+		}
 	}
 
 	@Override

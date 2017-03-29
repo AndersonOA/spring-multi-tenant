@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>br.com.makersweb</groupId>
 	<artifactId>multi-tenancy</artifactId>
@@ -7,6 +8,7 @@
 	<packaging>war</packaging>
 	<name>MakersWeb</name>
 	<description>Projeto Base para Archtetype Maven MakersWeb</description>
+	<url>http://www.multi-tenancy.com.br</url>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -35,8 +37,11 @@
 		<javax.mail.version>1.4.7</javax.mail.version>
 		<opensymphony.sitemesh.version>2.4.2</opensymphony.sitemesh.version>
 		<org.apache.velocity.version>1.7</org.apache.velocity.version>
+
+		<!-- Google Guava -->
+		<com.google.guava.version>21.0</com.google.guava.version>
 	</properties>
-	
+
 	<build>
 		<finalName>multi-tenancy</finalName>
 		<plugins>
@@ -58,7 +63,7 @@
 			</resource>
 		</resources>
 	</build>
-	
+
 	<dependencies>
 		<!-- Spring -->
 		<dependency>
@@ -257,6 +262,12 @@
 			<artifactId>sitemesh</artifactId>
 			<version>${opensymphony.sitemesh.version}</version>
 		</dependency>
+
+		<dependency>
+			<groupId>com.google.guava</groupId>
+			<artifactId>guava</artifactId>
+			<version>${com.google.guava.version}</version>
+		</dependency>
 	</dependencies>
 
 	<dependencyManagement>
@@ -268,5 +279,5 @@
 			</dependency>
 		</dependencies>
 	</dependencyManagement>
-	<url>http://www.multi-tenancy.com.br</url>
+
 </project>

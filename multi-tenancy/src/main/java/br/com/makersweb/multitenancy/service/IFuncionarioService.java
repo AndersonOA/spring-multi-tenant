@@ -5,8 +5,6 @@ package br.com.makersweb.multitenancy.service;
 
 import java.util.List;
 
-import org.springframework.dao.EmptyResultDataAccessException;
-
 import br.com.makersweb.multitenancy.domain.Funcionario;
 import br.com.makersweb.multitenancy.service.exception.BusinessException;
 
@@ -25,7 +23,7 @@ public interface IFuncionarioService {
 
 	Funcionario alterar(Funcionario funcionario) throws BusinessException;
 
-	void deletar(Long id) throws EmptyResultDataAccessException;
+	void deletar(Long id) throws BusinessException;
 
 	void verificaExistencia(Funcionario funcionario) throws BusinessException;
 
